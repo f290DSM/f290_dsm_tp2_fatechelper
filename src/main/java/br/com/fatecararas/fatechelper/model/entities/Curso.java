@@ -23,6 +23,6 @@ public class Curso {
     @Column(length = 100, nullable = false)
     private String nome;
 
-    @Column(length = 500)
+    @Column(columnDefinition = "text")
     private String descricao;
 }

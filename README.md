@@ -24,6 +24,7 @@ Neste projeto iremos criar uma aplicação Web e uma API para o controle de uso 
         curso {
             int id
             varchar nome
+            varchar descricao
         }
         disciplina {
             int id
