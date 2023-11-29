@@ -4,9 +4,7 @@ import br.com.fatecararas.fatechelper.model.entities.Curso;
 import br.com.fatecararas.fatechelper.model.repositories.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -22,9 +20,21 @@ public class CursoController {
         return "cursos/cadastrar";
     }
 
+    @PostMapping("/salvar")
+    public String salvar(Curso curso) {
+        repository.save(curso);
+        return "redirect:todos";
+    }
+
     @GetMapping("/todos")
     String listar() {
         return "cursos/listar";
+    }
+
+    @GetMapping("/excluir/{id}")
+    public String excluir(@PathVariable("id") Integer id) {
+        repository.deleteById(id);
+        return "redirect:todos";
     }
 
 

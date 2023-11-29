@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="container" layout:fragment="corpo">
-        <form th:action="@{/criar}" th:object="${curso}">
+        <form th:action="@{/helper/curso/salvar}" th:object="${curso}" method="post">
             <div class="mb-3">
                 <label for="nome-curso" class="form-label">Nome do Curso</label>
                 <input type="text" class="form-control" id="nome-curso" th:field="*{nome}">
