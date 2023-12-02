@@ -4,9 +4,11 @@ import br.com.fatecararas.fatechelper.model.entities.Curso;
 import br.com.fatecararas.fatechelper.model.repositories.CursoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/helper/curso")
@@ -23,7 +25,7 @@ public class CursoController {
     @PostMapping("/salvar")
     public String salvar(Curso curso) {
         repository.save(curso);
-        return "redirect:todos";
+        return "redirect:/helper/curso/todos";
     }
 
     @GetMapping("/todos")
@@ -34,9 +36,15 @@ public class CursoController {
     @GetMapping("/excluir/{id}")
     public String excluir(@PathVariable("id") Integer id) {
         repository.deleteById(id);
-        return "redirect:todos";
+        return "redirect:/helper/curso/todos";
     }
 
+    @GetMapping("/editar/{id}")
+    public String preEdicao(@PathVariable("id") Integer id, Model model) {
+        Curso curso = repository.findById(id).get();
+        model.addAttribute("curso", curso);
+        return "cursos/cadastrar";
+    }
 
     @ModelAttribute("cursos")
     public List<Curso> getCursos() {

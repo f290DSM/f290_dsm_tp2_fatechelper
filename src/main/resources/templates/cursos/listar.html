@@ -16,13 +16,13 @@
             </tr>
             </thead>
             <tbody>
-            <tr th:each="c : ${cursos}">
-                <th scope="row" th:text="${c.id}"></th>
-                <td th:text="${c.nome}"></td>
-                <td style="max-width: 40vw" class="text-truncate" th:text="${c.descricao}"></td>
+            <tr th:each="curso : ${cursos}">
+                <th scope="row" th:text="${curso.id}"></th>
+                <td th:text="${curso.nome}"></td>
+                <td style="max-width: 40vw" class="text-truncate" th:text="${curso.descricao}"></td>
                 <td class="min-vw-30">
-                    <a th:href="@{/helper/curso/editar/{id} (id = ${c.id})}" class="btn btn-warning btn-sm">Editar</a>
-                    <a th:href="@{/helper/curso/excluir/{id} (id = ${c.id})}" class="btn btn-danger btn-sm">Excluir</a>
+                    <a th:href="@{/helper/curso/editar/{id} (id = ${curso.id})}" class="btn btn-warning btn-sm">Editar</a>
+                    <a th:href="@{/helper/curso/excluir/{id} (id = ${curso.id})}" class="btn btn-danger btn-sm">Excluir</a>
                 </td>
             </tr>
             </tbody>

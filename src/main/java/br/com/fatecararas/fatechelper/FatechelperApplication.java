@@ -1,7 +1,11 @@
 package br.com.fatecararas.fatechelper;
 
+import java.util.Arrays;
 import java.util.List;
 
+import br.com.fatecararas.fatechelper.model.entities.DiaDaSemana;
+import br.com.fatecararas.fatechelper.model.entities.Disicplina;
+import br.com.fatecararas.fatechelper.model.repositories.DisciplinaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -14,7 +18,9 @@ import br.com.fatecararas.fatechelper.model.repositories.CursoRepository;
 public class FatechelperApplication implements CommandLineRunner {
 
 	@Autowired
-	private CursoRepository repository;
+	private CursoRepository cursoRepository;
+	@Autowired
+	private DisciplinaRepository disciplinaRepository;
 
 	public static void main(String[] args) {
 		SpringApplication.run(FatechelperApplication.class, args);
@@ -30,14 +36,28 @@ public class FatechelperApplication implements CommandLineRunner {
 //		c2.setNome("Gestão Empresarial");
 //		c2.setDescricao("Contabilidade, economia e administração são as bases de Gestão Empresarial. Direito tributário, logística, empreendedorismo, gestão ambiental, comportamento organizacional (postura do profissional no ambiente de trabalho) e utilização de ferramentas de marketing para motivar e orientar os funcionários também fazem parte da formação. O aluno também aprende a elaborar o planejamento estratégico, que define os objetivos de uma empresa a traçar as estratégias para alcançá-los, usando os recursos disponíveis de maneira eficiente.");
 //
-//		repository.save(c1);
-//		repository.save(c2);
+//		cursoRepository.save(c1);
+//		cursoRepository.save(c2);
 //
-//		List<Curso> cursos = repository.findAll();
+//		List<Curso> cursos = cursoRepository.findAll();
 //
 //		System.out.println(cursos);
-
-
+//
+//		Disicplina d1 = Disicplina.builder()
+//				.curso(c1)
+//				.descricao("Logica de Programacao")
+//				.diaDaSemana(DiaDaSemana.SEGUNDA_FEIRA)
+//				.idProfessor(1)
+//				.build();
+//
+//		Disicplina d2 = Disicplina.builder()
+//				.curso(c2)
+//				.descricao("Logistica Reversa")
+//				.diaDaSemana(DiaDaSemana.TERCA_FEIRA)
+//				.idProfessor(1)
+//				.build();
+//
+//		disciplinaRepository.saveAll(Arrays.asList(d1,d2));
 	}
 
 }
