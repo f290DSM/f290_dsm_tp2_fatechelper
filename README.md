@@ -66,3 +66,15 @@ Num | Integrantes                        | Tema |
 4 | Vinicius, Tiago Alvares, Mateus M  | Notebook |
 5 | Guilerme, Chiara, Thiago Barros    | Locação |
 6 | Pablo, Kauan, Lucas Teodoro        | Curso com relacionamento de disciplinas |
+
+## Entidade Informação
+
+1. Incluir dados institucionais [endereco];
+2. Incluir dados de midias sociai;
+3. Incluir links de sites associados;
+
+## Entidade de avisos [Mural Digital];
+* descrição;
+* data inicio;
+* data término;
+* imagem [];

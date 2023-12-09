@@ -2,5 +2,23 @@ package br.com.fatecararas.fatechelper.model.entities;
 
 
 public enum DiaDaSemana {
-        DOMINDO, SEGUNDA_FEIRA, TERCA_FEIRA, QUARTA_FEIRA, QUINAT_FEIRA, SABADO;
+    DOMINGO("Domingo"),
+    SEGUNDA("Segunda-feira"),
+    TERCA("Terça-feira"),
+    QUARTA("Quarta-feira"),
+    QUINTA("Quinta-feira"),
+    SEXTA("Setta-feira"),
+    SABADO("Sábado");
+
+
+
+    private String dia;
+
+    public String getDia() {
+        return dia;
+    }
+
+    DiaDaSemana(String dia) {
+        this.dia = dia;
+    }
 }

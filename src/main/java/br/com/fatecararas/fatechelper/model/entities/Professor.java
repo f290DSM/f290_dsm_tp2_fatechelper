@@ -20,10 +20,10 @@ public class Professor {
     private Integer id;
     private String nome;
 
-    @ManyToMany
-    @JoinTable(name = "professor_disciplina",
-    joinColumns = {
-            @JoinColumn(name = "id_disciplina")
-    })
-    private List<Disicplina> disicplinas = new ArrayList<>();
+//    @ManyToMany
+//    @JoinTable(name = "professor_disciplina",
+//    joinColumns = {
+//            @JoinColumn(name = "id_disciplina")
+//    })
+//    private List<Disicplina> disicplinas = new ArrayList<>();
 }

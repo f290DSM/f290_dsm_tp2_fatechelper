@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div class="container-fluid" layout:fragment="corpo">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">ID</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Descrição</th>
+                <th scope="col">Ação</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="curso : ${cursos}">
+                <th scope="row" th:text="${curso.id}"></th>
+                <td th:text="${curso.nome}"></td>
+                <td style="max-width: 40vw" class="text-truncate" th:text="${curso.descricao}"></td>
+                <td class="min-vw-30">
+                    <a th:href="@{/helper/curso/editar/{id} (id = ${curso.id})}" class="btn btn-warning btn-sm">Editar</a>
+                    <a th:href="@{/helper/curso/excluir/{id} (id = ${curso.id})}" class="btn btn-danger btn-sm">Excluir</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

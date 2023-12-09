@@ -12,11 +12,17 @@ import javax.persistence.*;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity(name = "disciplinas")
-public class Disicplina {
+public class Disciplina {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private Integer idProfessor;
+    private String nome;
     private String descricao;
+
+    @Enumerated(EnumType.STRING)
     private DiaDaSemana diaDaSemana;
+
+    @ManyToOne
+    @JoinColumn(name = "id_curso_fk")
+    private Curso curso;
 }
