@@ -6,7 +6,7 @@
 </head>
 <body>
     <div class="container" layout:fragment="corpo">
-        <form th:action="@{/helper/curso/salvar}" th:object="${disciplina}" method="post">
+        <form th:action="@{/helper/disciplinas/salvar}" th:object="${disciplina}" method="post">
             <div class="mb-3">
                 <label for="nome" class="form-label">Nome da Disciplina</label>
                 <input type="text" class="form-control" id="nome" th:field="*{nome}">
@@ -15,12 +15,12 @@
                 <label for="descricao" class="form-label">Descrição da Disciplina</label>
                 <input type="text" class="form-control" id="descricao" th:field="*{descricao}" >
             </div>
-            <select class="form-select form-select-lg mb-3" th:object="${cursos}">
-                <option selected >Selecione o curso</option>
+            <select class="form-select form-select-lg mb-3" th:field="*{curso}">
+                <option selected value="">Selecione o curso</option>
                 <option th:each="c : ${cursos}" th:value="${c.id}" th:text="${c.nome}">One</option>
             </select>
-            <select class="form-select form-select-lg mb-3" th:object="${diasDaSemana}">
-                <option selected >Selecione o dia da semana</option>
+            <select class="form-select form-select-lg mb-3"  th:field="*{diaDaSemana}">
+                <option selected value="">Selecione o dia da semana</option>
                 <option th:each="d : ${diasDaSemana}" th:value="${d}" th:text="${d.getDia()}">One</option>
             </select>
             <input type="hidden" id="id" th:field="*{id}">

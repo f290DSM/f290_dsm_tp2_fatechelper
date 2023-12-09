@@ -20,7 +20,7 @@ public class Disciplina {
     private String descricao;
 
     @Enumerated(EnumType.STRING)
-    private DiaDaSemana diaDaSemana;
+    public DiaDaSemana diaDaSemana;
 
     @ManyToOne
     @JoinColumn(name = "id_curso_fk")
